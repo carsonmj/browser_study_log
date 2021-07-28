@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Window Size</title>
+    <style>
+        .window-info {
+            display: inline-block; /*컨텐츠를 감쌀 때*/
+            padding: 20px;
+            margin: 12px 4px;
+            background-color: darksalmon;
+            font-size: 32px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="window-info">
+    </div>
+    <script>
+        const $div = document.querySelector('.window-info');
+
+        function updateSizeInfo() {
+            $div.innerHTML = `
+                window.screen : ${window.screen.width}, ${window.screen.height} </br>
+                window.outer : ${window.outerWidth}, ${window.outerHeight} </br>
+                window.inner : ${window.innerWidth}, ${window.innerHeight} </br>
+                documentElement.clientWidth : ${document.documentElement.clientWidth}, ${document.documentElement.clientHeight}
+            `;
+        }
+        
+        window.addEventListener('resize', updateSizeInfo)
+        updateSizeInfo();
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coordinates</title>
+    <style>
+        .box {
+            width: 120px;
+            height: 120px;
+            padding: 4px;
+            margin: 12px 12px;
+            background-color: darksalmon;
+        }
+        .item9 {
+            background-color:olive;
+        }
+    </style>
+</head>
+<body>
+    <div class="box item1"></div>
+    <div class="box item2"></div>
+    <div class="box item3"></div>
+    <div class="box item4"></div>
+    <div class="box item5"></div>
+    <div class="box item6"></div>
+    <div class="box item7"></div>
+    <div class="box item8"></div>
+    <div class="box item9"></div>
+    <div class="box item10"></div>
+    <div class="box item11"></div>
+    <div class="box item12"></div>
+    <script>
+        function onClickBox(e) {
+            console.log(e.target.getBoundingClientRect());
+            console.log(`client x, y : ${e.clientX}, ${e.clientY}`);
+            console.log(`page x, y : ${e.pageX}, ${e.pageY}`);
+        }
+
+        const boxes = document.querySelectorAll('.box');
+        boxes.forEach( box => {
+            box.addEventListener('click', onClickBox);
+        });
+    </script>
+</body>
+</html>
